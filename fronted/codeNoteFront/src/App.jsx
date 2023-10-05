@@ -1,20 +1,27 @@
 import axios from "axios";
+import { createContext, useState } from "react";
+import SomeComponent from "./SomeComponent";
+
+export const FetchDataContext = createContext(null);
 export default function App() {
-    const createPage = () => {
-      const sanmefunc = async () => {
-        try {
-          const axData = axios.get("http://localhost:8080/tasks");
-          console.log(axData);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      sanmefunc();
+  const [fetchData, setFetchData] = useState([]);
+  const createPage = () => {
+    const sanmefunc = async () => {
+      try {
+        const { data } = await axios.get("http://localhost:8080/tasks");
+        setFetchData([...data]);
+      } catch (error) {
+        console.log(error);
+      }
     };
-    return (
+    sanmefunc();
+  };
+  return (
+    <FetchDataContext.Provider value={fetchData}>
       <div className="App">
-        <button onClick={() => createPage()}>CREATE</button>
+        <button onClick={() => createPage()}>get data</button>
+        <SomeComponent/>
       </div>
-    );
-  }
-  
+    </FetchDataContext.Provider>
+  );
+}

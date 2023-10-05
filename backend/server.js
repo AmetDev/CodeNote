@@ -3,10 +3,10 @@ const db = require('./db')
 const app = express()
 const port = 8080
 const bodyParser = require('body-parser')
-
+const cors = require('cors')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(cors())
 // GET
 app.get('/tasks', async (req, res) => {
 	try {

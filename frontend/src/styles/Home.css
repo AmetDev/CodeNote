@@ -1,0 +1,58 @@
+body {
+    background-color: #18191C;
+  
+    font-family: 'JetBrains Mono', monospace;
+    
+  }
+  
+  button {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: #9EA4B7;
+  
+    background-color: #22242A;
+  
+    border: none;
+  }
+  
+  .btn_home {
+    color: #FFFFFF;
+  }
+
+  .navbar {
+    background-color: #22242A;
+
+    width: 408px;
+    height: 1022px;
+
+    margin-left: 89px;
+  }
+  
+  .search {
+    display: flex;
+    justify-content: center;
+
+    background-color: #18191C;
+
+    /* width: 552px;
+    height: 53px; */
+
+    color: #18191C;
+  }
+
+  .card {
+    background-color: #22242A;
+
+    width: 360px;
+    height: 370px;
+
+    border-radius: 20px;
+  }
+
+  h4 {
+    color: #E5E5E5;
+  }
+
+  p {
+    color: #9EA4B7;
+  }
